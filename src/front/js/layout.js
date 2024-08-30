@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
+import textureImg from "../img/texture.png";
 import { BackendURL } from "./component/backendURL";
 
 import { Home } from "./pages/home";
@@ -75,7 +76,7 @@ const Layout = () => {
     if (!process.env.BACKEND_URL || process.env.BACKEND_URL === "") return <BackendURL />;
 
     return (
-        <div className="bg-neutral-900 min-h-screen flex flex-col gap-6">
+        <div className="bg-neutral-900 min-h-screen flex flex-col gap-6" style={{ backgroundImage: `url(${textureImg})` }}>
             <BrowserRouter basename={basename}>
                 <PageTitleManager defaultTitle="GYMTRACK" />
                 <Navbar />
@@ -111,7 +112,7 @@ const Layout = () => {
                     <Footer />
                 </ScrollToTop>
             </BrowserRouter>
-        </div>
+        </div >
     );
 };
 
