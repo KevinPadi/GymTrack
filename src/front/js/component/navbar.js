@@ -1,36 +1,26 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { SideMenu } from "./sideMenu";
+import { LogoGymtrack } from "./logoGymtrack";
 
 export const Navbar = () => {
     const { store, actions } = useContext(Context);
+    const location = useLocation();
 
     return (
-        <nav className="navbar navbar-light bg-light">
-            <div className="container">
-                <Link to="/">
-                    <span className="navbar-brand mb-0 h1">React Boilerplate</span>
-                </Link>
-                <div className="ml-auto d-flex gap-2">
-                    {store.currentUser ? (
-                        <>
-                            <Link to="/private">
-                                <button className="btn btn-primary">Profile</button>
-                            </Link>
-                            <button className="btn btn-secondary" onClick={() => actions.logout()}>Logout</button>
-                        </>
-                    ) : (
-                        <>
-                            <Link to="/signup">
-                                <button className="btn btn-primary">Sign up</button>
-                            </Link>
-                            <Link to="/login">
-                                <button className="btn btn-primary">Login</button>
-                            </Link>
-                        </>
-                    )}
-                </div>
-            </div>
-        </nav>
+        location.pathname !== "/login" && location.pathname !== "/signup" && (
+            <>
+                <nav className="fixed top-0 left-0 w-full p-2 border-b border-neutral-600 bg-neutral-900 z-50 ">
+                    <div className="flex justify-between items-center w-full">
+                        <SideMenu />
+                        <div className="logoeffects">
+                            <LogoGymtrack logoSize="medium" />
+                        </div>
+                    </div>
+                </nav>
+                <div className="mt-16"></div>
+            </>
+        )
     );
 };
