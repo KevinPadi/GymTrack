@@ -6,6 +6,7 @@ import ProfileIcon from "../component/profileIcon";
 import "react-toastify/dist/ReactToastify.css"
 import { toast } from "react-toastify";
 import { Badge } from "../component/badge";
+import BackButton from "../component/backButton";
 
 export const Profile = () => {
   const { store, actions } = useContext(Context)
@@ -66,7 +67,7 @@ export const Profile = () => {
         setIsModalOpen(true)
       }
     }
-  
+
     fetchData();
   }, [])
 
@@ -104,7 +105,17 @@ export const Profile = () => {
 
   return (
     <div className="sm:w-2/3 w-11/12 mx-auto flex flex-col items-center gap-4 justify-between overflow-y-auto py-5 px-3 h-full bg-neutral-800 border-neutral-700 relative min-h-[800px]">
-      <h1 className="text-neutral-50 font-bold text-3xl">Perfil</h1>
+      <div className="absolute left-0 -top-[6px]">
+        <BackButton />
+      </div>
+
+      {/* form title */}
+      <span className="relative flex justify-center w-full sm:w-3/4 mx-auto">
+        <div
+          className="absolute inset-x-0 top-1/2 h-px -translate-y-3/4 bg-red bg-gradient-to-r from-transparent via-emerald-400 to-transparent opacity-75"
+        ></div>
+        <span className="relative z-10 text-white font-bold px-2 sm:px-6 bg-neutral-800 sm:text-xl">Perfil</span>
+      </span>
       <div className="flex flex-col items-center">
         {
           !store.currentUser ? <>
@@ -376,12 +387,12 @@ export const Profile = () => {
                 <div className='flex flex-col md:flex-row gap-4 w-full'>
                   <div className="w-full">
                     <label htmlFor="weight" className="block mb-1 text-sm font-medium text-neutral-900 dark:text-white">Peso (kg)</label>
-                    <input value={userData.weight}
+                    <input value={userData.weight} min={0}
                       onChange={handleChange} type="number" name="weight" id="weight" className="bg-neutral-50 border border-neutral-300 text-neutral-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-neutral-600 dark:border-neutral-500 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 focus:ring-emerald-500 focus:border-emerald-500" placeholder="76,8" required />
                   </div>
                   <div className="w-full">
                     <label htmlFor="height" className="block mb-1 text-sm font-medium text-neutral-900 dark:text-white">Altura (cm)</label>
-                    <input value={userData.height}
+                    <input value={userData.height} min={0}
                       onChange={handleChange} type="number" name="height" id="height" className="bg-neutral-50 border border-neutral-300 text-neutral-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-neutral-600 dark:border-neutral-500 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 focus:ring-emerald-500 focus:border-emerald-500" placeholder="178 cm" required />
                   </div>
                 </div>
