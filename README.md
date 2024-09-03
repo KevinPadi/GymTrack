@@ -1,4 +1,4 @@
-# Deploy: [Gymtrack](https://gymtrack-d8uh.onrender.com/)
+# Deploy: [Gymtrack](https://gymtrack-o3qx.onrender.com/)
 
 
 # WebApp boilerplate with React JS and Flask API
