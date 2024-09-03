@@ -104,3 +104,39 @@ export const ProfileIcon = () => (
         <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
     </svg>
 );
+
+export const ProgressIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-progress w-12 h-12 text-emerald-500">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M10 20.777a8.942 8.942 0 0 1 -2.48 -.969" />
+        <path d="M14 3.223a9.003 9.003 0 0 1 0 17.554" />
+        <path d="M4.579 17.093a8.961 8.961 0 0 1 -1.227 -2.592" />
+        <path d="M3.124 10.5c.16 -.95 .468 -1.85 .9 -2.675l.169 -.305" />
+        <path d="M6.907 4.579a8.954 8.954 0 0 1 3.093 -1.356" />
+    </svg>
+);
+
+export const CheckIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-checkbox w-12 h-12 text-emerald-500">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M9 11l3 3l8 -8" />
+        <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9" />
+    </svg>
+);
+
+export const ChartIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-chart-line w-12 h-12 text-emerald-500">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M4 19l16 0" />
+        <path d="M4 15l4 -6l4 2l4 -5l4 4" />
+    </svg>
+);
+
+export const DatabaseIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-database w-12 h-12 text-emerald-500">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" />
+        <path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+        <path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+    </svg>
+);
